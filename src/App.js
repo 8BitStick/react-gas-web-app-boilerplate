@@ -1,19 +1,21 @@
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import About from './components/About';
-import Home from './components/Home';
-import Nav from './components/Nav';
+import Theme from './components/Theme';
+import { GlobalProvider } from "./context/GlobalState";
+import Home from './pages/Home';
+import Login from './pages/Login';
 
 
 const App = () => {
   return (
-    <>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="*" element={<About />} />
-      </Routes>
-    </>
+    <GlobalProvider>
+      <Theme>
+        <Routes>
+          <Route path="*" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </Theme>
+    </GlobalProvider>
   );
 }
 

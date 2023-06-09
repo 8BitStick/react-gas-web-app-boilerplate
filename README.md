@@ -1,1 +1,1 @@
-# gas-webapp-react
+# react-gas-web-app-boilerplate
